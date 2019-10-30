@@ -42,6 +42,28 @@
 				<!-- Winditor -->
 				<h3 class="title has-text-grey-lighter">Winditor</h3>
 				<p><b>GitHub Repository:</b> <a href="https://github.com/LordNed/Winditor">https://github.com/LordNed/Winditor</a></p><br>
+				<p>
+					Winditor is a multi-purpose editor for the 2003 GameCube game <em>The Legend of Zelda: The Wind Waker</em>. The suite includes editors for maps, collision, text, drop items, and more.
+					The project has been an ongoing effort by multiple people for several years, and the current iteration was led by Matt "LordNed" Hoffman and I.
+				</p><br>
+				
+				<h5 class="title has-text-grey-lighter">Text Editor</h5>
+				<div class="card-image has-text-centered">
+					<figure class="image is-256x256 is-inline-block"><img src="img/winditor_text.png" alt="a"/></figure>
+				</div>
+				<p>
+					With Winditor's text editor, the user can modify the properties and contents of any message in the game. Addition of new messages is permitted, but removal is not; many objects in <em>The Wind Waker</em>
+					reference messages based on index rather than their unique IDs, which means that removing messages will break those objects by changing where the messages are located in the file. When messages are added,
+					the editor will check the existing messages to ensure that the new ones have their own unique IDs.
+				</p>
+				<p>
+					The raw text data in <em>The Wind Waker</em> contains binary control codes, which tell the game engine to insert variables into the text or modify how it is drawn. To make it easy to
+					work with these, they are converted into control tags contained within square brackets. For example, [red] will change the text color to red, while [white] reverts it to white. The [player] tag inserts the
+					player's name into the text. Whenever the text changes, the editor validates any control tags that it finds. If invalid tags are found, an error is displayed as shown below:
+				</p><br>
+				<div class="card-image has-text-centered">
+					<figure class="image is-256x256 is-inline-block"><img src="img/winditor_text_error.png" alt="a"/></figure>
+				</div>
 				
 				<!-- SuperBMD -->
 				<h3 class="title has-text-grey-lighter">SuperBMD</h3>
@@ -59,7 +81,7 @@
 					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_stone.png" alt="a"/></figure>
 				</div>
 				<p>
-					<em>3D models exported from the 2003 GameCube game </em>The Legend of Zelda: The Wind Waker<em> and posed in Blender.</em>
+					<em>3D models exported from the </em>The Legend of Zelda: The Wind Waker<em> and posed in Blender.</em>
 				</p><br>
 				
 				<div class="card-image has-text-centered">
