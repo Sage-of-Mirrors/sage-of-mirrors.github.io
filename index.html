@@ -51,30 +51,111 @@
 				
 				<img src="img/sbmd_poe.png" alt="a" width="150" height="150"/><img src="img/sbmd_octo.png" alt="a" width="208" height="208"/><br>
 				<img src="img/sbmd_jal.png" alt="a" width="250" height="250"/><img src="img/sbmd_stone.png" alt="a" width="219" height="219"/>
-				<p><em>3D models exported from the 2003 GameCube game </em>The Legend of Zelda: The Wind Waker<em> and posed in Blender.</em></p><br>
+				<p>
+					<em>3D models exported from the 2003 GameCube game </em>The Legend of Zelda: The Wind Waker<em> and posed in Blender.</em>
+				</p><br>
 				
 				<img src="img/sbmd_tetra.png" alt="a" width="200" height="200"/><img src="img/sbmd_medli.png" alt="a" width="246" height="246"/>
-				<img src="img/sbmd_trisuit.png" alt="a" width="446" height="446"/>
-				<p><em>Various 3D models imported over the player character in </em>The Wind Waker.<em> These models were rigged and/or created by
-				members of the Wind Waker Randomizer community and imported into the game with SuperBMD.</em></p><br>
+				<img src="img/sbmd_trisuit.png" alt="a" width="446" height="446"/><img src="img/sbmd_cloud.png" alt="a" width="215" height="215"/>
+				<p>
+					<em>Various 3D models imported over the player character in </em>The Wind Waker.<em> These models were rigged and/or created by
+					members of the Wind Waker Randomizer community and imported into the game with SuperBMD.</em>
+				</p><br>
 				
 				<iframe src="https://www.youtube.com/embed/PQXB1v2NphQ?start=51" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-				<p><em>An example of a player model replacement in </em>The Wind Waker<em> in motion. This video also demonstrates a text editor which I had
-				previously developed; the text has been modified to say "big sister" instead of "big brother."</em></p><br>
+				<p>
+					<em>An example of a player model replacement in </em>The Wind Waker<em> in motion. This video also demonstrates a text editor which I had
+					previously developed; the text has been modified to say "big sister" instead of "big brother."</em>
+				</p><br>
 				
 				<!-- Faura -->
 				<h3 class="title has-text-grey-lighter">Faura</h3>
 				<p>GitHub Repository: <a href="https://github.com/Sage-of-Mirrors/Faura">https://github.com/Sage-of-Mirrors/Faura</a></p><br>
+				<p>
+					Faura is a C# tool for compiling and decompiling event scripts for games developed for the PlayStation 2 by Gust. It is specifically designed for the 2007
+					<em>Ar Tonelico II: Melody of Metafalica</em>, but it is extensible such that it can be modified to work with Gust's other games. The tool's name comes from
+					a constructed language used in the <em>Ar Tonelico</em> series called Hymmnos, where it means "small bird."
+				</p><br>
+				<p>
+					The event binaries are made up of two pieces: text data and script commands. When Faura decompiles an even file, it produces a JSON file containing the text data and 
+					an ASM-styled text file representing the script commands. A typical text entry looks like this:
+				</p><br>
+				<div class="box">
+<pre>
+{
+  "Name": "msg_25",
+  "IsUsed": "True",
+  "TextboxType": "FULLPORTRAIT",
+  "CharacterName": "SPICA",
+  "CharacterID": "595",
+  "PortraitPosition": "LEFT_CONVERSATION",
+  "Text": "...even when everything was perfect."
+},
+</pre>
+				</div>
+				
+				<p>
+					While the ASM-style script data looks like this:
+				</p><br>
+								<div class="box">
+<pre>
+PlaySound 248 
+SetScreenFade 255 10 
+Wait 2 0 
+Wait 0 1 
+Wait 0 10 
+SetScreenFade 0 40 
+Wait 2 0 
+DeductDP -16777216 
+Wait 0 1 
+Wait 0 120 
+func_F138 
+func_F0FE 6 
+
+BeginBlock 6 
+GoToBlock 8 
+EndBlock 
+
+BeginBlock 7 
+GoToBlock 8 
+EndBlock 
+
+BeginBlock 8 
+PlaySound 199 
+PlaySound 361 
+func_F013 30 30 
+Wait 0 1 
+Wait 0 30 
+func_F013 10 -1 
+func_F112 0 180 0 
+DisplayDialogSeries msg_7 msg_7 
+PlaySound 246 
+SetScreenFade 255 120 
+</pre>
+				</div>
+				
+				<p>
+					Here, each line represents a single function call by the event. Each function lists its arguments. The functions are typically executed in a linear order; however,
+					there are some control structures in place with the <code>BeginBlock</code> and <code>GoToBlock</code> functions. These allow the event to proceed differently
+					based on various conditions, and they can even create loops that repeat actions until a condition is met or let the player confirm menu choices.
+				</p><br>
+				<p>
+					Below is a video of a custom event that I wrote once Faura was advanced enough. It adapts part of a light novel based on <em>Ar Tonelico II</em>, and demonstrates
+					much of what the event system of that game can do - character movement, emotion bubbles, conversation portraits, and so on.
+				</p><br>
+				
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/g-5d6phiGc4" frameborder="0" allowfullscreen></iframe><br><br>
 				
 				<!-- Others -->
 				<h3 class="title has-text-grey-lighter">Others</h3>
 				<h5 class="title has-text-grey-lighter">Libgbacom and PC-TCG</h3>
 				<p>GitHub Repositories: <a href="https://github.com/Sage-of-Mirrors/libgbacom">https://github.com/Sage-of-Mirrors/libgbacom</a>, <a href="https://github.com/Sage-of-Mirrors/PC-TCG">https://github.com/Sage-of-Mirrors/PC-TCG</a></p><br>
-				<p>Libgbacom is a C++ library that allows any program to communicate with the GameBoy Advance emulator VBA-M. Based on the GameCube emulator Dolphin's implementation,
-				libgbacom uses SFML's networking functionality to speak with the emulator over the network. It is intended to be used by PC-TCG, which is a project that aims to restore
-				GBA functionality to the PC port of Sonic Adventure 2: Battle. The game, originally released on the GameCube, had special GBA connectivity that was removed during the port.
-				The project restores most of the original connectivity menus and will allow the game to communicate with VBA-M as if it were a GameCube.</p>
-				
+				<p>
+					Libgbacom is a C++ library that allows any program to communicate with the GameBoy Advance emulator VBA-M. Based on the GameCube emulator Dolphin's implementation,
+					libgbacom uses SFML's networking functionality to speak with the emulator over the network. It is intended to be used by PC-TCG, which is a project that aims to restore
+					GBA functionality to the PC port of Sonic Adventure 2: Battle. The game, originally released on the GameCube, had special GBA connectivity that was removed during the port.
+					The project restores most of the original connectivity menus and will allow the game to communicate with VBA-M as if it were a GameCube.
+				</p><br>
 			</div>
 		</div>
 	 </div>
