@@ -52,11 +52,25 @@
 				<div class="card-image has-text-centered">
 					<figure class="image is-256x256 is-inline-block"><img src="img/winditor_actor.png" alt="a"/></figure>
 				</div>
+				<p>
+					The map editor is Winditor's default mode, and it allows the user to create and edit levels. As shown above, the once the user selects a directory containing a level, they are presented
+					with a 3D view of the level in the center of the screen flanked by two panels. The panel on the left shows the components of the level (scenes) and the objects that are spawned within the level, while the panel on the right is reserved for a details panel that displays the editable properties of a selected object. Objects can be selected by either clicking on them in the 3D view
+					or clicking them in the hierarchy shown in the left panel.
+				</p><br>
 				
 				<h5 class="title has-text-grey-lighter">Collision Editor</h5>
 				<div class="card-image has-text-centered">
 					<figure class="image is-256x256 is-inline-block"><img src="img/winditor_collision.png" alt="a"/></figure>
 				</div>
+				<p>
+					The collision editor allows the user to edit the properties of each triangle of a room's collision mesh. When the mode is activated, the collision mesh becomes visible, and the user
+					can click on triangles to select them. Just like the actor editor, the properties of the selected triangles can be changed via the details panel on the right side of the screen. The
+					right panel also contains the collision mesh's scenegraph. This is important because the elements of the scenegraph contain an important property: the terrain type of the geometry
+					that is attached to them. <em>The Wind Waker</em> has three possible terrain types: solid, water, and lava. Water forces the player to enter a swimming state, while lava forces the
+					player to void out. This property is not set per-triangle, as the other properties are; instead, it is applied to the scenegraph objects. Clicking once on a node in the scenegraph
+					tree selects that node to edit its properties. However, to facilitate editing per-triangle properties on multiple triangles at once, double clicking a scenegraph node will
+					instead select the <em>triangles</em> that are children of that node.
+				</p><br>
 				
 				<h5 class="title has-text-grey-lighter">Text Editor</h5>
 				<div class="card-image has-text-centered">
