@@ -203,14 +203,65 @@ PlaySound 361
 				
 				<!-- Others -->
 				<h3 class="title has-text-grey-lighter">Others</h3>
-				<h5 class="title has-text-grey-lighter">Libgbacom and PC-TCG</h3>
+				<h5 class="title has-text-grey-lighter">Libgbacom and PC-TCG</h5>
 				<p><b>GitHub Repositories:</b> <a href="https://github.com/Sage-of-Mirrors/libgbacom">https://github.com/Sage-of-Mirrors/libgbacom</a>, <a href="https://github.com/Sage-of-Mirrors/PC-TCG">https://github.com/Sage-of-Mirrors/PC-TCG</a></p><br>
 				<p>
 					Libgbacom is a C++ library that allows any program to communicate with the GameBoy Advance emulator VBA-M. Based on the GameCube emulator Dolphin's implementation,
 					libgbacom uses SFML's networking functionality to speak with the emulator over the network. It is intended to be used by PC-TCG, which is a project that aims to restore
-					GBA functionality to the PC port of Sonic Adventure 2: Battle. The game, originally released on the GameCube, had special GBA connectivity that was removed during the port.
-					The project restores most of the original connectivity menus and will allow the game to communicate with VBA-M as if it were a GameCube.
+					GBA functionality to the PC port of Sonic Adventure 2: Battle. The game, originally released on the GameCube, had special GBA connectivity that was removed during the
+					port. The project restores most of the original connectivity menus and will allow the game to communicate with VBA-M as if it were a GameCube.
 				</p><br>
+				
+				<h5 class="title has-text-grey-lighter">3DS Physics Suite</h5>
+				<p><b>GitHub Repository:</b> <a href="https://github.com/Sage-of-Mirrors/Physics_Suite">https://github.com/Sage-of-Mirrors/Physics_Suite</a></p><br>
+				<p>
+					This is a Nintendo 3DS homebrew application written in C++ that implements simple 2D physics calculations. It was written when I was taking a course called Physics in
+					Game Engines, which went over the math involved with simluating physics. It was planned to have multiple modes, including a gravity simulation and a simple platformer,
+					but those have yet to be implemented. Currently, the application will generate several circle objects of random sizes, colors, and velocities. When they collide with
+					each other or the edges of the screen, they will bounce off.
+				</p><br>
+				
+				<h5 class="title has-text-grey-lighter">GameCube Font Creator</h5>
+				<p><b>GitHub Repository:</b> <a href="https://github.com/Sage-of-Mirrors/GamecubeFontCreator">https://github.com/Sage-of-Mirrors/GamecubeFontCreator</a></p>
+				<p>
+					GameCube Font Creator is a C# application for working with Nintendo's GameCube font format, BFN. It can dump the font images to PNG files, and it can encode font data
+					to BFN files using the open source font format BMFont.
+				</p><br>
+				
+				<div class="card-image has-text-centered">
+					<figure class="image is-256x256 is-inline-block"><img src="img/font_papyrus.png" alt="a"/></figure>
+					<figure class="image is-256x256 is-inline-block"><img src="img/font_sans.png" alt="a"/></figure>
+				</div>
+				<p><em>Examples of fonts imported into </em>The Wind Waker<em> using GameCube Font Creator. The fonts Papyrus and Comic Sans, respectively, replace the game's main text font.</em></p><br>
+				
+				<h5 class="title has-text-grey-lighter">Ocarina Text Editor</h5>
+				<p><b>GitHub Repository:</b> <a href="https://github.com/Sage-of-Mirrors/Ocarina-Text-Editor">https://github.com/Sage-of-Mirrors/Ocarina-Text-Editor</a></p>
+				<p>
+					Ocarina Text Editor is a C# application for editing the text of <em>The Legend of Zelda: Ocarina of Time</em>. It is designed to work with the <em>Master Quest</em>
+					debug ROM, but the hardcoded addresses used for loading and saving the text data can be easily modified to work with other versions of the ROM.<br>
+					Notably, this editor
+					fixes a long-standing issue that other editors ahd. The text data for <em>Ocarina of Time</em> includes a character map used for the title screen's "PRESS START" text,
+					as well as the file select menu's banner. The location of this character map within the ROM is hardcoded into the game's bout routine, so other editors that modified
+					where it was located would end up causing the text that relied on it to become garbled. Ocarina Text Editor fixes this error by forcing the character map message
+					to be located at the start of the message data, and modifies the boot routine's address for it to reflect its new position.<br>
+					<em>Ocarina of Time</em> handles text control codes in much the same way as <em>The Wind Waker</em>, and Ocarina Text Editor handles them in a similar manner.
+					However, the control tags that Ocarina Text Editor serializes the control codes into reflect an earlier style that I preferred, using angled brackets instead of
+					square brackets and simplifying the tags themselves to be as short as possible. For example, the tag &lt;C&gt; changes the text color to cyan, while &lt;W&gt; reverts it to white.
+				</p><br>
+				<div class="card-image has-text-centered">
+					<figure class="image is-256x256 is-inline-block"><img src="img/ocarinatext.png" alt="a"/></figure>
+				</div>
+				
+				<h5 class="title has-text-grey-lighter">Wind Waker Song Editor</h5>
+				<p><b>GitHub Repository:</b> <a href="https://github.com/Sage-of-Mirrors/WindWakerSongEditor">https://github.com/Sage-of-Mirrors/WindWakerSongEditor</a>
+				<p>
+					One of my earliest projects, Wind Waker Song Editor is a C# application for editing the inputs required to trigger Wind Waker songs in the titular <em>Legend of Zelda</em> game.
+					It provides the user with an interface, allowing them to select the song to edit, how many notes are in the song (3/4/6), and what each note in the song is. The notes are represented
+					by the direction graphics that the game itself uses.
+				</p><br>
+				<div class="card-image has-text-centered">
+					<figure class="image is-256x256 is-inline-block"><img src="img/songeditor.png" alt="a"/></figure>
+				</div>
 			</div>
 		</div>
 	 </div>
