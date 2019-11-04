@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dylan Ascencio | Home</title>
     <link rel="stylesheet" href="css/bulma.min.css">
+	<link rel="stylesheet" href="css/bulma-carousel.min.css">
 	<style>
 		html, body, .section, { height: 100%; }
 		.navbar-start {
 			flex-grow: 1;
 			justify-content: center;
+		}
+		.carousel {
+			overflow: hidden;
 		}
 	</style>
   </head>
@@ -25,7 +29,7 @@
         </div>
       </div>
     </nav>
-	<section class="section has-background-dark">
+	<section class="section has-background-dark has-carousel">
 	 <div class="columns is-mobile">
 		<div class="column is-half is-offset-one-quarter">
 			<div class="box has-text-grey-lighter has-background-grey-dark">
@@ -99,22 +103,67 @@
 					to formats that are supported by common 3D modeling programs. Below are some examples of 3D models produced by SuperBMD.
 				</p><br>
 				
-				<div class="card-image has-text-centered">
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_poe.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_octo.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_jal.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_stone.png" alt="a"/></figure>
+				<div class="container">
+					<!-- Start Carousel -->
+					<div id="carousel-poses" class="carousel">
+						<div class="item-1">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_poe.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-2">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_octo.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-3">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_jal.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-4">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_stone.png" alt="a"/></figure>
+							</div>
+						</div>
+					</div>
+					<!-- End Carousel -->
 				</div>
+	
 				<p>
 					<em>3D models exported from the </em>The Legend of Zelda: The Wind Waker<em> and posed in Blender.</em>
 				</p><br>
 				
-				<div class="card-image has-text-centered">
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_tetra.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_medli.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_trisuit.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_cloud.png" alt="a"/></figure>
-					<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_ashley.png" alt="a"/></figure>
+				<div class="container">
+					<!-- Start Carousel -->
+					<div id="carousel-models" class="carousel">
+						<div class="item-1">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_tetra.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-2">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_medli.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-3">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_trisuit.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-4">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_cloud.png" alt="a"/></figure>
+							</div>
+						</div>
+						<div class="item-5">
+							<div class="card-image has-text-centered">
+								<figure class="image is-256x256 is-inline-block"><img src="img/sbmd_ashley.png" alt="a"/></figure>
+							</div>
+						</div>
+					</div>
+					<!-- End Carousel -->
 				</div>
 				<p>
 					<em>Various 3D models imported over the player character in </em>The Wind Waker.<em> These models were rigged and/or created by
@@ -266,5 +315,13 @@ PlaySound 361
 		</div>
 	 </div>
 	</section>
+	
+	<script src="js/bulma-carousel.min.js"></script>
+	<script>
+	bulmaCarousel.attach('.carousel', {
+		slidesToScroll: 1,
+		slidesToShow: 1
+	});
+	</script>
   </body>
 </html>
