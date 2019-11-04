@@ -240,7 +240,7 @@ PlaySound 361
 					Ocarina Text Editor is a C# application for editing the text of <em>The Legend of Zelda: Ocarina of Time</em>. It is designed to work with the <em>Master Quest</em>
 					debug ROM, but the hardcoded addresses used for loading and saving the text data can be easily modified to work with other versions of the ROM.<br>
 					Notably, this editor
-					fixes a long-standing issue that other editors ahd. The text data for <em>Ocarina of Time</em> includes a character map used for the title screen's "PRESS START" text,
+					fixes a long-standing issue that other editors had. The text data for <em>Ocarina of Time</em> includes a character map used for the title screen's "PRESS START" text,
 					as well as the file select menu's banner. The location of this character map within the ROM is hardcoded into the game's bout routine, so other editors that modified
 					where it was located would end up causing the text that relied on it to become garbled. Ocarina Text Editor fixes this error by forcing the character map message
 					to be located at the start of the message data, and modifies the boot routine's address for it to reflect its new position.<br>
