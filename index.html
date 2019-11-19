@@ -207,7 +207,7 @@
 					a constructed language used in the <em>Ar Tonelico</em> series called Hymmnos, where it means "small bird."
 				</p><br>
 				<p>
-					The event binaries are made up of two pieces: text data and script commands. When Faura decompiles an even file, it produces a JSON file containing the text data and 
+					The event binaries are made up of two pieces: text data and script commands. When Faura decompiles an event file, it produces a JSON file containing the text data and 
 					an ASM-styled text file representing the script commands. A typical text entry looks like this:
 				</p><br>
 				<div class="box">
@@ -310,7 +310,7 @@ PlaySound 361
 					debug ROM, but the hardcoded addresses used for loading and saving the text data can be easily modified to work with other versions of the ROM.<br>
 					Notably, this editor
 					fixes a long-standing issue that other editors had. The text data for <em>Ocarina of Time</em> includes a character map used for the title screen's "PRESS START" text,
-					as well as the file select menu's banner. The location of this character map within the ROM is hardcoded into the game's bout routine, so other editors that modified
+					as well as the file select menu's banner. The location of this character map within the ROM is hardcoded into the game's boot routine, so other editors that modified
 					where it was located would end up causing the text that relied on it to become garbled. Ocarina Text Editor fixes this error by forcing the character map message
 					to be located at the start of the message data, and modifies the boot routine's address for it to reflect its new position.<br>
 					<em>Ocarina of Time</em> handles text control codes in much the same way as <em>The Wind Waker</em>, and Ocarina Text Editor handles them in a similar manner.
